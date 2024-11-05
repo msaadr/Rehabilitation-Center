@@ -1,0 +1,102 @@
+.image-container {
+    position: relative; /* Required for absolute positioning of the overlay */
+    width: 100%; /* Make the container responsive */
+    max-width: 100%; /* Optional: Set a max-width for larger screens */
+    margin: auto; /* Center the container */
+    overflow: hidden; /* Optional: Hide any overflow from the image */
+}
+
+.img2 {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 50vh; /* Limit height but allow width to be responsive */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.overlay {
+    position: absolute; /* Positioning on top of the image */
+    top: 0; /* Position at the top */
+    left: 0; /* Position at the left */
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* Text color */
+    text-align: center; /* Center text */
+}
+
+/* Button styling */
+.but {
+    background-color: #6a0dad;
+    height: 3em;
+    width: 6em;
+    cursor: pointer;
+    border: none; /* Remove default button border */
+    border-radius: 5px; /* Optional: add border radius */
+    color: white; /* Button text color */
+    font-weight: bold; /* Bold text */
+}
+
+.but:hover {
+    background-color: gray; /* Change background color on hover */
+}
+.s24{
+    margin-top: 2%;
+color: white;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .img2 {
+        max-height: 50vh; /* Maintain 50vh for tablets */
+    }
+
+    .overlay {
+        font-size: 1.2rem; /* Adjust overlay font size for medium devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .img2 {
+        max-height: 40vh; /* Adjust height for mobile devices */
+    }
+
+    .overlay {
+        font-size: 1rem; /* Adjust overlay font size for small devices */
+    }
+}
+.card{
+   height: 430px;
+   margin: auto;
+   margin-top: 5%;
+    text-align: center;
+    
+}
+.card-title{
+    text-align: center;
+}
+.card-img-top{
+    height: 180px;
+    margin-bottom: 7%;;
+    
+}
+.faciltiy {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+    gap: 1rem; /* Optional: Add spacing between items */
+}
+
+@media (max-width: 768px) {
+    .faciltiy {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .faciltiy {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+        gap: 1rem; /* Add spacing for mobile view */
+    }
+}

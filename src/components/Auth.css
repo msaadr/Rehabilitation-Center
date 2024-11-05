@@ -1,0 +1,95 @@
+/* Center the container and add a soft gradient background */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* background: linear-gradient(135deg, #f0f4f8, #d9e2ec); */
+  font-family: Arial, sans-serif;
+}
+
+/* Form container styles */
+.form-container {
+  max-width: 400px;
+  width: 100%;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  border: #333 solid thin;
+  border-radius: 30px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Heading style */
+.form-container h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* Input field styles */
+.form-container input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.75rem 0;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-container input:focus {
+  border-color: #4a90e2;
+  outline: none;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+/* Primary button styles */
+.form-container button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 1.25rem 0;
+  background-color: #4a90e2;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(74, 144, 226, 0.4);
+}
+
+.form-container button[type="submit"]:hover {
+  background-color: #357abf;
+  box-shadow: 0 6px 12px rgba(53, 122, 191, 0.4);
+}
+
+/* Toggle button styles */
+.toggle-button {
+  background: none;
+  border: none;
+  color: #4a90e2;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.toggle-button:hover {
+  color: #357abf;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+}

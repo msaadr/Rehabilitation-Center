@@ -1,0 +1,9 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+/* In App.css or a global CSS file */
+body {
+    background-color: white; /* Set background to white */
+    margin: 0; /* Remove any default margins */
+    padding: 0;
+    min-height: 100vh; /* Ensure it covers the full viewport */
+}

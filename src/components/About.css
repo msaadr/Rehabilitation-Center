@@ -1,0 +1,48 @@
+.img {
+    width: 100%;
+    height: auto; 
+    max-height: 50vh; /* Limit height */
+    object-fit: cover; /* Cover the area */
+}
+.about {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px; /* Set a max-width for better readability */
+}
+
+.about-container {
+    text-align: left; /* Align text to the left */
+}
+
+.about h2 {
+    font-size: 2rem;
+    color: #174771;
+    margin-bottom: 20px;
+}
+
+.about h3 {
+    font-size: 1.5rem;
+    color: #6a0dad;
+    margin-top: 20px;
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.about ul, .about ol {
+    padding-left: 20px; /* Add left padding for lists */
+}
+
+.about li {
+    margin-bottom: 10px; /* Space between list items */
+    font-size: 1rem;
+}
+
+.about strong {
+    color: #425475; /* Color for emphasis */
+}
