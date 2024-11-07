@@ -40,7 +40,8 @@
 }
 
 .but:hover {
-    background-color: gray; /* Change background color on hover */
+    background-color: gray  ; 
+    
 }
 .s24{
     margin-top: 2%;
@@ -99,4 +100,35 @@ color: white;
         grid-template-columns: 1fr; /* 1 column for mobile */
         gap: 1rem; /* Add spacing for mobile view */
     }
+}
+.services-container {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+/* Title styling */
+.services-title {
+  text-align: center;
+  color: #6a0dad;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Individual service item styling */
+.service-item {
+  margin-top: 1.5rem;
+}
+
+/* Heading styling for each service */
+.service-heading {
+  color: #174771;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Description styling */
+.service-description {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
 }

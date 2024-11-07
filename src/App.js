@@ -12,14 +12,12 @@ import About from "./components/About"
 function App() {
   return (
     <>
-   
-   
       <Router>
         <div className="nav">
           <Navbar />
         </div>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/Rehabilitation-Center" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/membership" element={<Membership />} />
