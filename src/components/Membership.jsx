@@ -1,5 +1,7 @@
 import React from 'react'
 import "./Membership.css";
+import { Link } from "react-router-dom";
+
 function Membership(){
     return (
       <>
@@ -10,19 +12,50 @@ function Membership(){
               <div className="title">Basic Plan</div>
               <ul className="features">
                 <li>
-                  <div className="icon"></div>Check Up
+                  <div className="icon">Check Up</div>
                 </li>
                 <li>
-                  <div className="icon"></div>Accomodation (7days)
+                  <div className="icon">Accomodation (7days)</div>
                 </li>
                 <li>
-                  <div className="icon"></div>Food
+                  <div className="icon">Food</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
                 </li>
               </ul>
               <div className="action">
-                <a href="#" className="button">
+                <Link to="/week" className="button">
+                  
                   Choose Plan
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -33,13 +66,43 @@ function Membership(){
               <div className="title">Premium Plan</div>
               <ul className="features">
                 <li>
-                  <div className="icon"></div>Check Up
+                  <div className="icon">Check Up</div>
                 </li>
                 <li>
-                  <div className="icon"></div>Accomodation (90days)
+                  <div className="icon">Accomodation (90days)</div>
                 </li>
                 <li>
-                  <div className="icon"></div>Food
+                  <div className="icon">Food</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
                 </li>
               </ul>
               <div className="action">
@@ -55,13 +118,40 @@ function Membership(){
               <div className="title">Exculsive Plan</div>
               <ul className="features">
                 <li>
-                  <div className="icon"></div>Check Up
+                  <div className="icon">Check Up</div>
                 </li>
                 <li>
-                  <div className="icon"></div>Accomodation (180days)
+                  <div className="icon">Accomodation (180days)</div>
                 </li>
                 <li>
-                  <div className="icon"></div>Food
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
+                </li>
+                <li>
+                  <div className="icon">Lorem ipsum dolor sit.</div>
                 </li>
               </ul>
               <div className="action">

@@ -1,22 +1,21 @@
+// App.js
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home"; 
+import Layout from "./Layout";
+import Home from "./components/Home";
 import Contact from "./components/Contact";
-import Membership from "./components/Membership"
-import Service from "./components/Service"
-import SignIn from "./components/SignIn"
-import About from "./components/About"
+import Membership from "./components/Membership";
+import Service from "./components/Service";
+import SignIn from "./components/SignIn";
+import About from "./components/About";
+import Week from "./components/Week";
 
 function App() {
   return (
-    <>
-      <Router>
-        <div className="nav">
-          <Navbar />
-        </div>
-        <Routes>
+    <Router>
+      <Routes>
+        <Route element={<Layout />}>
           <Route path="/Rehabilitation-Center" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
@@ -24,9 +23,11 @@ function App() {
           <Route path="/services" element={<Service />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/about" element={<About />} />
-        </Routes>
-      </Router>
-    </>
+        </Route>
+        {/* Week route without Navbar */}
+        <Route path="/week" element={<Week />} />
+      </Routes>
+    </Router>
   );
 }
 
