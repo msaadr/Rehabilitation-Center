@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Membership.css";
 import { Link } from "react-router-dom";
-
+import Footer from "./Footer";
 function Membership(){
     return (
       <>
@@ -75,6 +75,7 @@ function Membership(){
             </div>
           </div>
         </div>
+        <Footer/>
       </>
     );
 }
