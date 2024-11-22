@@ -1,73 +1,53 @@
-import React,{useRef} from "react";
 import "./Service.css"; // Ensure your CSS is linked correctly
-import image from "./assets/ser.jpg"; // Make sure the image path is correct
 import food from "./assets/food.jpg";
+import React, { useRef } from "react";
 import accomodation from "./assets/accomodation.jpg";
 import doctor from "./assets/doctor.jpg";
-function Service() {
-  const contentRef=useRef(null);
-  const handlescroll =()=>{
-    contentRef.current?.scrollIntoView({behavior:'smooth'});
-  };
-  return (
-    <>
-      <div className="image-container">
-        <img src={image} alt="service" className="img2" />
-        <div className="overlay">
-          <div>
-            <h2>Consultancy</h2>
-            <p>
-              Great things are done by series of small things brought together.
-            </p>
-            <button className="but" onClick={handlescroll}>
-              Learn More
-            </button>
+function Ser(){
+    return (
+      <>
+        <h1 className="services-title">Services</h1>
+        <div className="faciltiy">
+          <div className="card" style={{ width: "18rem" }}>
+            <div className="card-body">
+              <h3 className="card-title">Accomodation</h3>
+              <img src={accomodation} className="card-img-top" alt="www" />
+              <p className="card-text">
+                We provide the best and clean room with the healthy enviroment
+                to make sure the quick recovery.
+              </p>
+              <a href="#" className="btn btn-primary">
+                Go somewhere
+              </a>
+            </div>
+          </div>
+          <div className="card" style={{ width: "18rem" }}>
+            <div className="card-body">
+              <h3 className="card-title">Food</h3>
+              <img src={food} className="card-img-top" alt="www" />
+              <p className="card-text">
+                We provide the healthy and top quality food, which is best for
+                the victim's recovery.
+              </p>
+              <a href="#" className="btn btn-primary">
+                Go somewhere
+              </a>
+            </div>
+          </div>
+          <div className="card" style={{ width: "18rem" }}>
+            <div className="card-body">
+              <h3 className="card-title">Doctors</h3>
+              <img src={doctor} className="card-img-top" alt="www" />
+              <p className="card-text">
+                We have the best and highly qualified dcotors which is
+                specialized in this field.
+              </p>
+              <a href="#" className="btn btn-primary">
+                See Doctors
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="faciltiy">
-        <div className="card" style={{ width: "18rem" }}>
-          <div className="card-body">
-            <h3 className="card-title">Accomodation</h3>
-            <img src={accomodation} className="card-img-top" alt="www" />
-            <p className="card-text">
-              We provide the best and clean room with the healthy enviroment to
-              make sure the quick recovery.
-            </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
-          </div>
-        </div>
-        <div className="card" style={{ width: "18rem" }}>
-          <div className="card-body">
-            <h3 className="card-title">Food</h3>
-            <img src={food} className="card-img-top" alt="www" />
-            <p className="card-text">
-              We provide the healthy and top quality food, which is best for the
-              victim's recovery.
-            </p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
-          </div>
-        </div>
-        <div className="card" style={{ width: "18rem" }}>
-          <div className="card-body">
-            <h3 className="card-title">Doctors</h3>
-            <img src={doctor} className="card-img-top" alt="www" />
-            <p className="card-text">
-              We have the best and highly qualified dcotors which is specialized
-              in this field.
-            </p>
-            <a href="#" className="btn btn-primary">
-              See Doctors
-            </a>
-          </div>
-        </div>
-      </div>
-      <div ref={contentRef} className="services-container">
-        <h1 className="services-title">Our Services</h1>
 
         <div className="service-item">
           <h2 className="service-heading">Real-Time Progress Tracking</h2>
@@ -129,9 +109,7 @@ function Service() {
             their loved one’s journey to healing.
           </p>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
 }
-
-export default Service;
+export default Ser;

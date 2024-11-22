@@ -3,6 +3,7 @@ import "./Home.css";
 import image from "../home.jpg";
 import image1 from "./assets/main1.jpg";
 import image2 from "./assets/main2.jpg";
+import Ser from "./Ser";
 function Home() {
   return (
     <>
@@ -134,6 +135,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <Ser />
     </>
   );
 }

@@ -1,11 +1,14 @@
-.container {
+.containerr {
     display: flex;
     justify-content: center; /* Center cards horizontally */
     flex-wrap: wrap; /* Allow cards to wrap to the next line */
     gap: 20px; /* Space between cards */
-   
-    padding: 20px; /* Padding around the container */
+   margin-top: 7%;
+    padding: 20px;
+    color: #ecf0ff; /* Padding around the container */
+ 
 }
+
 
 
 .plan, .plan2, .plan3 {
@@ -14,9 +17,10 @@
     padding: 10px;
     background-color: #fff;
     color: #174771;
+    margin: auto;
     max-width: 300px; /* Max width for larger screens */
     width: 100%; /* Make it take full width of the container */
-    height: fit-content; /* Height adjusts to content */
+ /* Height adjusts to content */
 }
 
 /* Inner box */
@@ -28,6 +32,7 @@
     padding-top: 40px;
     background-color: #ecf0ff;
     border-radius: 12px;
+    height: 300px;
     position: relative;
 }
 
@@ -56,24 +61,29 @@
 /* Features and other sections */
 .plan .features, .plan2 .features, .plan3 .features {
     display: flex;
+
+    padding-bottom: 10px;
     flex-direction: column;
 }
 
 /* Button styling */
 .plan .button, .plan2 .button, .plan3 .button {
-    display: flex;
+    
     background-color: #6558d3;
     border-radius: 6px;
     color: #fff;
     font-weight: 500;
     font-size: 1.125rem;
-    text-align: center;
+    display: flex;
+    margin: auto;
     border: 0;
     outline: 0;
-    width: 100%;
+    width: fit-content;
     padding: 0.625em 0.75em;
-    justify-content: center;
+   
+    
     text-decoration: none;
+      
 }
 
 /* Button hover effects */
@@ -117,5 +127,6 @@
     .plan .button, .plan2 .button, .plan3 .button {
         font-size: 1rem; /* Adjust button font size for better touch targets */
         padding: 0.5em; /* Adjust padding */
+        
     }
 }
