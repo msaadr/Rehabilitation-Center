@@ -8,17 +8,52 @@ const Auth = () => {
     password: "",
     confirmPassword: "",
   });
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const API_BASE_URL = "https://dbms-backend-za0h.onrender.com/api/auth";
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (isSignUp) {
-      console.log("Signup Data:", formData);
-    } else {
-      console.log("Login Data:", formData);
+
+    // Reset messages
+    setErrorMessage("");
+    setSuccessMessage("");
+
+    // Define endpoint
+    const endpoint = isSignUp ? "/signup" : "/login";
+
+    // Prepare request payload
+    // const payload = {
+    //       email: formData.email,
+    //       password: formData.password
+    //     }
+
+    try {
+      console.log(formData.email);
+      const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({}),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccessMessage(data.message || "Success!");
+      } else {
+        setErrorMessage(data.message || "Something went wrong!");
+      }
+    } catch (error) {
+      setErrorMessage(
+        "Failed to connect to the server. Please try again later."
+      );
     }
   };
 
@@ -55,6 +90,8 @@ const Auth = () => {
           )}
           <button type="submit">{isSignUp ? "Sign Up" : "Login"}</button>
         </form>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {successMessage && <p className="success-message">{successMessage}</p>}
         <button
           className="toggle-button"
           onClick={() => setIsSignUp(!isSignUp)}
@@ -65,7 +102,6 @@ const Auth = () => {
         </button>
       </div>
     </div>
-    
   );
 };
 

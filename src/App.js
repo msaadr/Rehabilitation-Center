@@ -12,6 +12,8 @@ import About from "./components/About";
 import Week from "./components/Week";
 import register from "./components/Register";
 import Register from "./components/Register";
+import AdminPortal from "./components/AdminPortal";
+
 
 function App() {
   return (
@@ -28,7 +30,8 @@ function App() {
         </Route>
         {/* Week route without Navbar */}
         <Route path="/register" element={<Register />} />
-
+        <Route path="/adminPortal" element={<AdminPortal />}></Route>
+     
       </Routes>
     </Router>
   );
