@@ -4,6 +4,7 @@ import image from "./assets/ser.jpg"; // Make sure the image path is correct
 import food from "./assets/food.jpg";
 import accomodation from "./assets/accomodation.jpg";
 import doctor from "./assets/doctor.jpg";
+import { Link } from "react-router-dom";
 import Footer from './Footer'
 function Service() {
   const contentRef = useRef(null);
@@ -56,14 +57,13 @@ function Service() {
         <div className="card" style={{ width: "18rem" }}>
           <div className="card-body">
             <h3 className="card-title">Doctors</h3>
-            <img src={doctor} className="card-img-top" alt="www" />
+            <img src={doctor} className="card-img-top" alt="Doctors" />
             <p className="card-text">
-              We have the best and highly qualified dcotors which is specialized
-              in this field.
+              We have the best and highly qualified doctors specialized in this field.
             </p>
-            <a href="#" className="btn btn-primary">
+            <Link to="/doctor" className="btn btn-primary">
               See Doctors
-            </a>
+            </Link>
           </div>
         </div>
       </div>

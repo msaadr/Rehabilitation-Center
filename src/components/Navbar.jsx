@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-function Navbar() {
+function Navbar(props) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -33,9 +33,15 @@ function Navbar() {
           <Link to="/contact" onClick={closeMenu}>
             Contact
           </Link>
-          <Link to="/signin" className="log" onClick={closeMenu}>
-            Sign In
+          <Link
+          to={props.set ? '/logout' : '/singin'}
+          className="log"
+            style={{ color: 'black' }}
+            onClick={closeMenu}
+          >
+            {props.signin}
           </Link>
+
         </div>
       )}
       <div className={`navbar-links ${isOpen ? "open" : ""}`}>
@@ -54,10 +60,16 @@ function Navbar() {
         <Link to="/contact" onClick={closeMenu}>
           Contact
         </Link>
-        <Link to="/signin" className="log" onClick={closeMenu}>
-          Sign In
+        <Link
+          to={props.set ? '/logout' : '/signin'}
+          className="log"
+          style={{ color: 'black' }}
+          onClick={closeMenu}
+        >
+          {props.signin}
         </Link>
-        
+
+
       </div>
       <div className="menu-icon" onClick={toggleMenu}>
         <div className="menu-line"></div>

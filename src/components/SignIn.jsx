@@ -1,10 +1,10 @@
 import React from 'react'
 import Auth from "./Auth"
 import "./SignIn.css";
-function SignIn(){
+function SignIn(props){
     return (
       <>
-  <Auth/>
+  <Auth signin={props.signin} setData={props.setData}/>
 
       </>
     );

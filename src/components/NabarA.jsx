@@ -47,13 +47,13 @@ function NavbarA() {
         <Link style={{ color: "white" }} to="/home" onClick={closeMenu}>
           Messages
         </Link>
-        <Link to="/patient" className="log" onClick={closeMenu}>
+        <Link to="/patient" className="log" style={{color:'black',backgroundColor:'lightcyan'}}  onClick={closeMenu}>
           Patient
         </Link>
-        <Link style={{ color: "white" }} to="/services" onClick={closeMenu}>
+        <Link style={{ color: "white" }} to="/doctor" onClick={closeMenu}>
           Doctors
         </Link>
-        <Link style={{ color: "white" }} to="/membership" onClick={closeMenu}>
+        <Link style={{ color: "white" }} to="/voucher" onClick={closeMenu}>
           Vouchers
         </Link>
         <Link style={{ color: "white" }} to="/contact" onClick={closeMenu}>

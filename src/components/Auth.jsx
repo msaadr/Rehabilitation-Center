@@ -1,202 +1,96 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './LoginSignup.css';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import "./Auth.css";
+import { useNavigate } from "react-router-dom";
+const Auth = (props) => {
+  const navigate=useNavigate()
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const users = [
+    { name: "admin", password: "admin" },
+    { name: "doctor", password: "doctor" },
+    { name: "normaluser", password: "normaluser" },
+  ];
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
-const SignUp = (props) => {
-  const [name, setName] = useState('');
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const[phno,setphno]=useState('')
-  const [response, setResponse] = useState('');
-  const [isResponse, setIsResponse] = useState(false);
-  const [upperHeading, setUpperHeading] = useState('Login Form');
-  const [isLogin, setIsLogin] = useState(true);
-  const [transition, setTransition] = useState(true);
-  const [handleError, setError] = useState(false);
-  const myDivRef = useRef(null);
-  const navigate = useNavigate();
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const handleLoginSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const dataForLogin = { email, password };
-    try {
-      const response = await axios.post(
-        'http://localhost:5000/api/auth/login',
-        dataForLogin,
-        { withCredentials: true } 
-      );
-      
-      setEmail('');
-      setPassword('');
-      setResponse(response.data.message);
-      setIsResponse(true);
+
+    // Reset messages
+    setErrorMessage("");
+    setSuccessMessage("");
+
+    // Check if the user exists in the predefined list
+    const user = users.find(
+      (u) => u.name === formData.email && u.password === formData.password
+    );
+
+    if (user) {
+      props.signin(true)
+      props.setData(formData)
+      setSuccessMessage(`Welcome, ${user.name}!`);
+
       navigate('/')
-    } catch (error) {
-      setEmail('');
-      setPassword('');
-      setResponse(error.response.data.message);
-      setIsResponse(true);
-      setError(true);
-      console.error('Login failed:', error);
-    }
-    setTimeout(() => {
-      setResponse('');
-      setIsResponse(false);
-      setError(false);
-    }, 3000);
-  };
-
-  const handleSignupSubmit = async (e) => {
-    e.preventDefault();
-    const dataForSignup = { name, username, email, password,phno };
-    try {
-      const response = await axios.post('http://localhost:5000/api/auth/signup', dataForSignup);
-      console.log('Signup successful:', response.data);
-      setName('');
-      setEmail('');
-      setUsername('');
-      setPassword('');
-      setphno('')
-      setResponse(response.data.message);
-      setIsResponse(true);
-    } catch (error) {
-      setName('');
-      setEmail('');
-      setUsername('');
-      setPassword('');
-      setphno('')
-      setResponse(error.response.data.message);
-      setError(true);
-      setIsResponse(true);
-    }
-    setTimeout(() => {
-      setResponse('');
-      setIsResponse(false);
-      setError(false);
-    }, 3000);
-  };
-
-  if (myDivRef.current) {
-    if (isResponse && handleError) {
-      myDivRef.current.style.opacity = 1;
-      myDivRef.current.style.backgroundColor = '#ff0000';
-    } else if (isResponse && !handleError) {
-      myDivRef.current.style.opacity = 1;
-      myDivRef.current.style.backgroundColor = '#4a90e2';
+      
     } else {
-      myDivRef.current.style.opacity = 0;
-      myDivRef.current.style.backgroundColor = '#4a90e2';
+      setErrorMessage("Invalid username or password.");
     }
-  }
-
-  const switchToSignup = () => {
-    setUpperHeading('Signup Form');
-    setIsLogin(false);
   };
-
-  const switchToLogin = () => {
-    setUpperHeading('Login Form');
-    setIsLogin(true);
-  };
-
-  useEffect(() => {
-    setTransition(false);
-    const timeout = setTimeout(() => {
-      setTransition(true);
-    }, 400);
-
-    return () => clearTimeout(timeout);
-  }, [upperHeading]);
 
   return (
-    <div>
-      {/* <h1 ref={myDivRef} className='response'>{response}</h1> */}
-      <div className="main-log-sig">
-        <div className="login-signUp">
-        <h1 ref={myDivRef} className='response'>{response}</h1> 
-          <h2 style={{ textAlign: 'center' }}>{upperHeading}</h2>
-          <hr style={{ marginBottom: '10px' ,marginTop:'-10px'}} />
-          <div className="log-sig-but">
-            <button className={`${isLogin ? 'buttt' : ''}`} onClick={switchToLogin}>
-              Login
-            </button>
-            <button className={`${!isLogin ? 'buttt' : ''}`} onClick={switchToSignup}>
-              Sign Up
-            </button>
-          </div>
-
-          {isLogin ? (
-            <div className={`main-log-sig-container log ${transition ? 'show' : 'hide'}`}>
-              <form className="form-log-sig" onSubmit={handleLoginSubmit}>
-                <input
-                  type="text"
-                  placeholder="Email or username"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <div>
-                  <span>Not a member?</span>
-                  <span style={{ cursor: 'pointer', color: 'blue' }} onClick={switchToSignup}>
-                    Signup now
-                  </span>
-                </div>
-                <button type="submit" className="log-sig-buut">
-                  Login
-                </button>
-              </form>
-            </div>
-          ) : (
-            <div className={`main-log-sig-container sig ${transition ? 'show' : 'hide'}`}>
-              <form className="form-log-sig" onSubmit={handleSignupSubmit}>
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-                <input
-                  type="text"
-                  placeholder="Username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                />
-                  <input
-                  type="number"
-                  placeholder="Phone number"
-                  value={phno}
-                  onChange={(e) => setphno(e.target.value)}
-                />
-
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type="submit" className="log-sig-buut">
-                  Sign Up
-                </button>
-              </form>
-            </div>
+    <div className="auth-container">
+      <div className="form-container">
+        <h2>{isSignUp ? "Sign Up" : "Login"}</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="email"
+            placeholder="Email or username"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+          {isSignUp && (
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              required
+            />
           )}
-        </div>
+          <button type="submit">{isSignUp ? "Sign Up" : "Login"}</button>
+        </form>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {successMessage && <p className="success-message">{successMessage}</p>}
+        <button
+          className="toggle-button"
+          onClick={() => setIsSignUp(!isSignUp)}
+        >
+          {isSignUp
+            ? "Already have an account? Login"
+            : "Don't have an account? Sign Up"}
+        </button>
       </div>
     </div>
   );
 };
 
-export default SignUp;
+export default Auth;
