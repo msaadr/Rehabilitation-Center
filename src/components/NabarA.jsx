@@ -18,7 +18,7 @@ function NavbarA() {
       <div className="navbar-logo">Rehab</div>
       {isOpen && (
         <div className={`navbar-links ${isOpen ? "open" : ""}`}>
-          <Link to="/home" onClick={closeMenu}>
+          <Link to="/" onClick={closeMenu}>
             Home
           </Link>
           <Link to="/about" onClick={closeMenu}>
@@ -47,8 +47,8 @@ function NavbarA() {
         <Link style={{ color: "white" }} to="/home" onClick={closeMenu}>
           Messages
         </Link>
-        <Link style={{ color: "white" }} to="/about" onClick={closeMenu}>
-          Patients
+        <Link to="/patient" className="log" onClick={closeMenu}>
+          Patient
         </Link>
         <Link style={{ color: "white" }} to="/services" onClick={closeMenu}>
           Doctors

@@ -13,27 +13,37 @@ import Week from "./components/Week";
 import register from "./components/Register";
 import Register from "./components/Register";
 import AdminPortal from "./components/AdminPortal";
+import Navbar from "./components/Navbar";
+import Ser from "./components/Ser";
+import Footer from "./components/Footer";
+import Patient from "./components/Patient";
 
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/Rehabilitation-Center" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/membership" element={<Membership />} />
-          <Route path="/services" element={<Service />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/about" element={<About />} />
-        </Route>
+        {/* <Route element={<Layout />}> */}
+        <Route path="/" element={<><Home /><About /><Service /><Footer /></>} />
+        <Route path="/home" element={<><Home /><About /><Service /><Footer /></>} />
+        <Route path="/contact" element={<><Contact /><Footer /></>} />
+        <Route path="/membership" element={<><Membership /><Footer /></>} />
+        <Route path="/services" element={<><Service /><Footer /></>} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route part='/patient' element={<Patient/>}/>
+        <Route path="/about" element={<><About /><Footer/></>} />
+        {/* </Route> */}
         {/* Week route without Navbar */}
         <Route path="/register" element={<Register />} />
         <Route path="/adminPortal" element={<AdminPortal />}></Route>
-     
+
       </Routes>
     </Router>
+
+
+
+
   );
 }
 

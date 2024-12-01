@@ -31,17 +31,19 @@ function Home() {
             aria-label="Slide 3"
           ></button>
         </div>
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src={image} className="img" alt="..." />
+        <div className="carousel-inner custom-carousel">
+          <div className="carousel-item active h-100" >
+            <img src={image} alt="..." />
           </div>
           <div className="carousel-item">
-            <img src={image1} className="img1" alt="..." />
+            <img src={image1} alt="..." />
           </div>
           <div className="carousel-item">
-            <img src={image2} className="img2" alt="..." />
+            <img src={image2}  alt="..." />
           </div>
         </div>
+
+
         <button
           className="carousel-control-prev"
           type="button"
@@ -69,7 +71,7 @@ function Home() {
       </div>
       <div className="contact-box-container">
         {/* Phone Section */}
-        <div className="contact-box">
+        <div className="contact-box aaa" >
           <div className="contact-icon">
             <a href="tel:+92%2042%2035177791-2">
               <i className="fas fa-mobile-alt" aria-hidden="true"></i>
@@ -112,32 +114,32 @@ function Home() {
         </h3>
         <div className="box">
           <div className="card" style={{ width: "20rem" }}>
-            <div className="card-body">
+            <div className="card-body" style={{ boxShadow: ' 4px 4px 10px -5px' }}>
               <p className="card-text">
                 This is one of the best institute for the addicts.They provide
                 best enviroment for the quick recovery.The service they provide
                 through the web is top notch for the family.
               </p>
+              <hr />
               <h3>Abdullah Zahid</h3>
               <h5>Family</h5>
             </div>
           </div>
           <div className="card" style={{ width: "20rem" }}>
-            <div className="card-body">
+            <div className="card-body" style={{ boxShadow: ' 4px 4px 10px -5px' }}>
               <p className="card-text">
                 They have one of the best doctors specilized in this field.They
                 have one of the best service for the real time updates.I can
                 also contact or leave message for my doctor for my current
                 situation.
               </p>
+              <hr />
               <h3>Saad Ramzan</h3>
               <h5>Patient</h5>
             </div>
           </div>
         </div>
       </div>
-      <Ser />
-      <Footer/>
     </>
   );
 }

@@ -9,8 +9,10 @@ function Layout() {
   return (
     <>
       {/* Only show the Navbar if the current route is not /week */}
-      {location.pathname !== "/week" && <Navbar />}
-      <Outlet /> {/* This renders the nested routes */}
+      {/* {location.pathname !== "/week" && <Navbar />}
+      <Outlet />  */}
+      
+      {/* This renders the nested routes */}
     </>
   );
 }

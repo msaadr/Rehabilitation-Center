@@ -75,7 +75,6 @@ function Membership(){
             </div>
           </div>
         </div>
-        <Footer/>
       </>
     );
 }

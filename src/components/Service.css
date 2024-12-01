@@ -5,9 +5,20 @@
     margin: auto; /* Center the container */
     overflow: hidden; /* Optional: Hide any overflow from the image */
 }
+.main-serv-cont{
+    /* border: 2px solid red; */
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    column-gap: 80px;
+    width: fit-content;
+    margin: auto;
+    /* text-align: center; */
+    
+}
 
 .img2 {
-    width: 100%; /* Make the image responsive */
+    width: 100%; /* Make the ima
+    cge responsive */
     height: auto; /* Maintain aspect ratio */
     max-height: 50vh; /* Limit height but allow width to be responsive */
     object-fit: cover; /* Ensures the image covers the area without distortion */
@@ -117,6 +128,11 @@ color: white;
 /* Individual service item styling */
 .service-item {
   margin-top: 1.5rem;
+  width: 350px;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 4px 4px 10px -5px;
 }
 
 /* Heading styling for each service */
